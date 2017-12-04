@@ -73,7 +73,6 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print("imageUrlString is nil")
             }
             
-            
         } else {
             print("photos is nil")
         }
