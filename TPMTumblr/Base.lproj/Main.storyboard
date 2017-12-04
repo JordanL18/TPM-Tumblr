@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T8O-WY-hyk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K14-CQ-p5C">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="27B-mA-2ZH">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="photoCell" rowHeight="493" id="y10-ez-Uk6" customClass="PhotoCell" customModule="TPMTumblr" customModuleProvider="target">
@@ -32,7 +33,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="492.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h18-Jm-ec8">
+                                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h18-Jm-ec8">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="484.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="484.5" id="f98-Bj-QeM"/>
@@ -48,6 +49,7 @@
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="tumblrPostImageView" destination="h18-Jm-ec8" id="zpo-LM-4H4"/>
+                                                    <segue destination="xXY-ln-khd" kind="show" id="WVG-gq-EL9"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -71,13 +73,73 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="lkw-hx-AtB"/>
                     <connections>
                         <outlet property="tumblrPhotosTableView" destination="27B-mA-2ZH" id="hA5-g4-4nX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
+            <point key="canvasLocation" x="372" y="33.733133433283363"/>
+        </scene>
+        <!--Detailed View Controller-->
+        <scene sceneID="VKH-zJ-owN">
+            <objects>
+                <viewController id="xXY-ln-khd" customClass="DetailedViewController" customModule="TPMTumblr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Lb-S5-D5d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dki-z4-auM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gg0-PO-Unw">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="402"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="gg0-PO-Unw" firstAttribute="height" secondItem="dki-z4-auM" secondAttribute="height" multiplier="2:3" id="1rR-ct-0gW"/>
+                                    <constraint firstAttribute="trailing" secondItem="gg0-PO-Unw" secondAttribute="trailing" id="3nK-pt-bT6"/>
+                                    <constraint firstItem="gg0-PO-Unw" firstAttribute="top" secondItem="dki-z4-auM" secondAttribute="top" id="XMa-37-26D"/>
+                                    <constraint firstItem="gg0-PO-Unw" firstAttribute="leading" secondItem="dki-z4-auM" secondAttribute="leading" id="vUX-IV-mXS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g9o-Pv-zf3" firstAttribute="bottom" secondItem="dki-z4-auM" secondAttribute="bottom" id="BIR-vd-DoC"/>
+                            <constraint firstItem="g9o-Pv-zf3" firstAttribute="trailing" secondItem="dki-z4-auM" secondAttribute="trailing" id="F6I-bV-KMP"/>
+                            <constraint firstItem="dki-z4-auM" firstAttribute="leading" secondItem="g9o-Pv-zf3" secondAttribute="leading" id="jHF-xr-88b"/>
+                            <constraint firstItem="dki-z4-auM" firstAttribute="top" secondItem="g9o-Pv-zf3" secondAttribute="top" id="mbL-gc-z9h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g9o-Pv-zf3"/>
+                    </view>
+                    <connections>
+                        <outlet property="posterImageView" destination="gg0-PO-Unw" id="uZY-OJ-Zf2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A2U-hv-YfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252" y="33.733133433283363"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2no-xT-gYQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T8O-WY-hyk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tgR-A4-POX">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ima-PN-br5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sXR-Hk-leK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-414" y="34"/>
         </scene>
     </scenes>
 </document>

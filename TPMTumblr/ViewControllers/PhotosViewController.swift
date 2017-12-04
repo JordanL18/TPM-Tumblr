@@ -86,14 +86,21 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
+        let vc = segue.destination as! DetailedViewController
+        
+        let cell = sender as! UITableViewCell
+        let indexPath = self.tumblrPhotosTableView.indexPath(for: cell)!
+        
         // Pass the selected object to the new view controller.
+        let currPost = self.posts![indexPath.row]
+        
+        vc.post = currPost
+        
     }
-    */
 
 }

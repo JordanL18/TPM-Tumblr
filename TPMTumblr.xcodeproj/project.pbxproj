@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		59D577D78D6868DDA3D12FEC /* Pods_TPMTumblr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4D83AA78E99B042FD3A492 /* Pods_TPMTumblr.framework */; };
+		BB4A95511FD529BB002A3A1C /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A95501FD529BB002A3A1C /* DetailedViewController.swift */; };
 		BB4D57281FD51B6600AF8603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4D57271FD51B6600AF8603 /* AppDelegate.swift */; };
 		BB4D572D1FD51B6600AF8603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4D572B1FD51B6600AF8603 /* Main.storyboard */; };
 		BB4D572F1FD51B6600AF8603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4D572E1FD51B6600AF8603 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		10461606C953678F02997F08 /* Pods-TPMTumblr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPMTumblr.release.xcconfig"; path = "Pods/Target Support Files/Pods-TPMTumblr/Pods-TPMTumblr.release.xcconfig"; sourceTree = "<group>"; };
 		1D4D83AA78E99B042FD3A492 /* Pods_TPMTumblr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TPMTumblr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92EDAE434CF9C06771F5E2CB /* Pods-TPMTumblr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPMTumblr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TPMTumblr/Pods-TPMTumblr.debug.xcconfig"; sourceTree = "<group>"; };
+		BB4A95501FD529BB002A3A1C /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		BB4D57241FD51B6600AF8603 /* TPMTumblr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPMTumblr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4D57271FD51B6600AF8603 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB4D572C1FD51B6600AF8603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				BB4D573A1FD51CD300AF8603 /* PhotosViewController.swift */,
+				BB4A95501FD529BB002A3A1C /* DetailedViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 			files = (
 				BB4D57281FD51B6600AF8603 /* AppDelegate.swift in Sources */,
 				BB4D573E1FD51D2D00AF8603 /* PhotoCell.swift in Sources */,
+				BB4A95511FD529BB002A3A1C /* DetailedViewController.swift in Sources */,
 				BB4D573B1FD51CD300AF8603 /* PhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
