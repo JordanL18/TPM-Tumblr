@@ -32,15 +32,15 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print(error.localizedDescription)
             } else if let data = data,
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                print(dataDictionary)
                 
                 // TODO: Get the posts and store in posts property
                 
                 // Get the dictionary from the response key
-//                let responseDictionary = dataDictionary["response"] as! [String: Any]
+                let responseDictionary = dataDictionary["response"] as! [String: Any]
 //                // Store the returned array of dictionaries in our posts property
-//                self.posts = responseDictionary["posts"] as! [[String: Any]]
+                self.posts = responseDictionary["posts"] as? [NSDictionary]
                 
+                print (self.posts)
                 // TODO: Reload the table view
 
             }
