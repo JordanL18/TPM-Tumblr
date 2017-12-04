@@ -8,6 +8,8 @@
 
 import UIKit
 
+import AlamofireImage
+
 class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tumblrPhotosTableView: UITableView!
@@ -41,7 +43,9 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.posts = responseDictionary["posts"] as? [NSDictionary]
                 
                 print (self.posts)
+                
                 // TODO: Reload the table view
+                self.tumblrPhotosTableView.reloadData()
 
             }
         }
@@ -58,7 +62,22 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let photoCell = self.tumblrPhotosTableView.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath) as! PhotoCell
         
-//        photoCell.tumblrPostImageView.image = ""
+        let currPost = self.posts![indexPath.row]
+        
+        if let photos = currPost.value(forKeyPath: "photos") as? [NSDictionary] {
+            let imageUrlString = photos[0].value(forKeyPath: "original_size.url") as? String
+            
+            if let imageUrl = URL(string: imageUrlString!) {
+                photoCell.tumblrPostImageView.af_setImage(withURL: imageUrl)
+            } else {
+                print("imageUrlString is nil")
+            }
+            
+            
+        } else {
+            print("photos is nil")
+        }
+
         return photoCell
     }
     
