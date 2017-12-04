@@ -6,5 +6,6 @@ target 'TPMTumblr' do
   use_frameworks!
 
   # Pods for TPMTumblr
+  pod 'AlamofireImage', '~> 3.3'
 
 end
